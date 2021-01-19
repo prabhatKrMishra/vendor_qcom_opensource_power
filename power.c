@@ -117,6 +117,8 @@ static void power_hint(struct power_module *module, power_hint_t hint,
                 else
                     ALOGE("Lock for hint: %X was not acquired, cannot be released", hint);
         break;
+        default:
+	    break;
     }
 }
 

@@ -96,6 +96,9 @@ int  power_hint_override(struct power_module *module, power_hint_t hint,
             process_video_encode_hint(data);
             return HINT_HANDLED;
         }
+        break;
+        default:
+	    break;
     }
     return HINT_NONE;
 }
