@@ -148,11 +148,14 @@ void set_interactive(struct power_module *module, int on)
 void power_set_dt2w(struct power_module* module, feature_t feature, int state)
 {
     switch (feature) {
+    	case POWER_FEATURE_DOUBLE_TAP_TO_WAKE:
 #ifdef TAP_TO_WAKE_NODE
-        case POWER_FEATURE_DOUBLE_TAP_TO_WAKE:
             sysfs_write(TAP_TO_WAKE_NODE, state ? "1" : "0");
-            break;
 #endif
+#ifdef TAP_TO_WAKE_NODE2
+            sysfs_write(TAP_TO_WAKE_NODE2, state ? "1" : "0");
+#endif
+            break;
         default:
             break;
     }

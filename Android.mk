@@ -83,6 +83,10 @@ ifneq ($(TARGET_TAP_TO_WAKE_NODE),)
     LOCAL_CFLAGS += -DTAP_TO_WAKE_NODE=\"$(TARGET_TAP_TO_WAKE_NODE)\"
 endif
 
+ifneq ($(TARGET_TAP_TO_WAKE_NODE2),)
+    LOCAL_CFLAGS += -DTAP_TO_WAKE_NODE2=\"$(TARGET_TAP_TO_WAKE_NODE2)\"
+endif
+
 LOCAL_MODULE := power.qcom
 LOCAL_MODULE_TAGS := optional
 LOCAL_CFLAGS += -Wno-unused-parameter -Wno-unused-variable
